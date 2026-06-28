@@ -1,0 +1,109 @@
+---
+layout: default
+---
+
+{% assign resume = site.data.resume %}
+
+<article class="resume-page" lang="zh-CN">
+  <header class="resume-hero">
+    <div>
+      <p class="resume-eyebrow">Resume</p>
+      <h1>{{ resume.name }}</h1>
+      <p class="resume-headline">{{ resume.english_name }} · {{ resume.headline }}</p>
+    </div>
+    <div class="resume-contact-list" aria-label="Contact">
+      {% for contact in resume.contacts %}
+        <a class="resume-contact-item" href="{{ contact.href }}" {% if contact.href contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>
+          <span>{{ contact.label }}</span>
+          <strong>{{ contact.value }}</strong>
+        </a>
+      {% endfor %}
+    </div>
+  </header>
+
+  <div class="resume-grid">
+    <aside class="resume-sidebar">
+      <section class="resume-section">
+        <h2>教育背景</h2>
+        <div class="resume-entry">
+          <div class="resume-entry-head">
+            <h3>{{ resume.education.school }}</h3>
+            <span>{{ resume.education.period }}</span>
+          </div>
+          <p class="resume-entry-subtitle">{{ resume.education.major }}</p>
+          <ul class="resume-list">
+            {% for item in resume.education.highlights %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>主要课程</h2>
+        <div class="resume-chip-group">
+          {% for course in resume.education.courses %}
+            <span class="resume-chip">{{ course }}</span>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>专业技能</h2>
+        {% for group in resume.skills %}
+          <div class="resume-skill-group">
+            <h3>{{ group.label }}</h3>
+            <div class="resume-chip-group">
+              {% for item in group.items %}
+                <span class="resume-chip">{{ item }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </section>
+
+      <section class="resume-section">
+        <h2>社会实践</h2>
+        <ul class="resume-list">
+          {% for item in resume.practice %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    </aside>
+
+    <div class="resume-main">
+      <section class="resume-section">
+        <h2>项目经历</h2>
+        {% for project in resume.projects %}
+          <div class="resume-entry resume-project">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <ul class="resume-list">
+              {% for bullet in project.bullets %}
+                <li>{{ bullet }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </section>
+
+      <section class="resume-section">
+        <h2>荣誉奖励</h2>
+        <div class="resume-timeline">
+          {% for award in resume.awards %}
+            <div class="resume-timeline-item">
+              <div>
+                <h3>{{ award.title }}</h3>
+                {% if award.detail %}
+                  <p>{{ award.detail }}</p>
+                {% endif %}
+              </div>
+              <span>{{ award.date }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </div>
+</article>

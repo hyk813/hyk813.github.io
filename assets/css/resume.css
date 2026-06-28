@@ -1,0 +1,228 @@
+.resume-page {
+  color: var(--text-color);
+}
+
+.resume-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  gap: 1.5rem;
+  align-items: end;
+  padding: 1.4rem 0 1.2rem;
+  border-bottom: 1px solid var(--main-border-color);
+}
+
+.resume-eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--text-muted-color);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resume-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.05;
+}
+
+.resume-headline {
+  margin: 0.55rem 0 0;
+  color: var(--text-muted-color);
+  font-size: 1rem;
+}
+
+.resume-contact-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.resume-contact-item {
+  display: grid;
+  gap: 0.12rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--main-border-color);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.resume-contact-item:hover strong {
+  color: var(--link-color);
+}
+
+.resume-contact-item span {
+  color: var(--text-muted-color);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.resume-contact-item strong {
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.85fr) minmax(0, 1.65fr);
+  gap: 2rem;
+  padding-top: 1.4rem;
+}
+
+.resume-section {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--main-border-color);
+}
+
+.resume-section:first-child {
+  padding-top: 0;
+}
+
+.resume-section h2 {
+  margin: 0 0 0.85rem;
+  color: var(--heading-color);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.resume-entry + .resume-entry,
+.resume-skill-group + .resume-skill-group,
+.resume-project + .resume-project {
+  margin-top: 1.25rem;
+}
+
+.resume-entry h3,
+.resume-skill-group h3,
+.resume-timeline-item h3 {
+  margin: 0;
+  color: var(--heading-color);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.resume-entry p,
+.resume-timeline-item p {
+  margin: 0.45rem 0 0;
+}
+
+.resume-entry-head {
+  display: flex;
+  gap: 0.8rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.resume-entry-head span,
+.resume-timeline-item span {
+  flex: 0 0 auto;
+  color: var(--text-muted-color);
+  font-size: 0.88rem;
+}
+
+.resume-entry-subtitle {
+  color: var(--text-muted-color);
+}
+
+.resume-list {
+  margin: 0.65rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.resume-list li + li {
+  margin-top: 0.35rem;
+}
+
+.resume-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.resume-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.85rem;
+  padding: 0.22rem 0.58rem;
+  border: 1px solid var(--main-border-color);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 0.86rem;
+}
+
+.resume-timeline {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.resume-timeline-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--main-border-color);
+}
+
+@media (max-width: 991px) {
+  .resume-hero,
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-contact-list {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .resume-entry-head,
+  .resume-timeline-item {
+    display: block;
+  }
+
+  .resume-entry-head span,
+  .resume-timeline-item span {
+    display: inline-block;
+    margin-top: 0.25rem;
+  }
+}
+
+@media print {
+  #sidebar,
+  #topbar-wrapper,
+  #panel-wrapper,
+  #tail-wrapper,
+  #search-result-wrapper,
+  #back-to-top,
+  #notification,
+  #mask {
+    display: none !important;
+  }
+
+  #main-wrapper,
+  .container,
+  main {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .resume-page {
+    color: #111;
+    font-size: 11pt;
+  }
+
+  .resume-hero {
+    grid-template-columns: 1fr 250px;
+  }
+
+  .resume-grid {
+    grid-template-columns: 0.85fr 1.65fr;
+    gap: 1.2rem;
+  }
+
+  .resume-section {
+    break-inside: avoid;
+  }
+}
