@@ -84,13 +84,11 @@
 }
 
 .resume-entry + .resume-entry,
-.resume-skill-group + .resume-skill-group,
 .resume-project + .resume-project {
   margin-top: 1.35rem;
 }
 
 .resume-entry h3,
-.resume-skill-group h3,
 .resume-timeline-item h3 {
   margin: 0;
   color: var(--heading-color);
@@ -129,22 +127,8 @@
   margin-top: 0.35rem;
 }
 
-.resume-chip-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-
-.resume-chip {
-  display: inline-flex;
-  align-items: center;
-  min-height: 1.85rem;
-  padding: 0.22rem 0.58rem;
-  border: 1px solid var(--main-border-color);
-  border-radius: 6px;
-  background: var(--card-bg);
-  color: var(--text-color);
-  font-size: 0.86rem;
+.resume-skill-line {
+  margin: 0.45rem 0 0;
 }
 
 .resume-timeline {

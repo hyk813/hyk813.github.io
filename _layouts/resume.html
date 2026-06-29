@@ -60,25 +60,12 @@ layout: compress
                 </section>
 
                 <section class="resume-section">
-                  <h2>Selected Coursework</h2>
-                  <div class="resume-chip-group">
-                    {% for course in resume.education.courses %}
-                      <span class="resume-chip">{{ course }}</span>
-                    {% endfor %}
-                  </div>
-                </section>
-
-                <section class="resume-section">
                   <h2>Technical Skills</h2>
                   {% for group in resume.skills %}
-                    <div class="resume-skill-group">
-                      <h3>{{ group.label }}</h3>
-                      <div class="resume-chip-group">
-                        {% for item in group.items %}
-                          <span class="resume-chip">{{ item }}</span>
-                        {% endfor %}
-                      </div>
-                    </div>
+                    <p class="resume-skill-line">
+                      <strong>{{ group.label }}:</strong>
+                      {{ group.items | join: ', ' }}
+                    </p>
                   {% endfor %}
                 </section>
 
